@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  Bookshelf
 //
 //  Created by Jayson Brennan on 8/25/23.
