@@ -9,8 +9,10 @@ import Foundation
 
 struct Book: Hashable {
     let name: String
+    let author: String
     
-    init(name: String) {
+    init(name: String, author: String) {
         self.name = name
+        self.author = author
     }
 }

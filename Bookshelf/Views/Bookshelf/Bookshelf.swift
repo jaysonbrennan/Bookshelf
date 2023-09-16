@@ -9,19 +9,17 @@ import SwiftUI
 
 struct Bookshelf: View {
     // DEBUG:
-    private let book = Book(name: "Final Empire")
+    private let book = Book(name: "Final Empire", author: "Brandon Sanderson")
     
     var body: some View {
         NavigationStack {
-            NavigationLink(value: book) {
-                BookCard(book: book)
+            List(0 ..< 3) { item in
+                NavigationLink(value: book) {
+                    BookCard(book: book)
+                }
             }
-            NavigationLink(value: book) {
-                BookCard(book: book)
-            }
-            NavigationLink(value: book) {
-                BookCard(book: book)
-            }
+            .navigationTitle("Bookshelf")
+            .listStyle(.plain)
         }
     }
 }
