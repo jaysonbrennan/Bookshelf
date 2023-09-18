@@ -14,7 +14,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Library", systemImage: "building.columns.fill")
                 }
-            Text("Bookshelf")
+            BookshelfView()
                 .tabItem {
                     Label("Bookshelf", systemImage: "books.vertical.fill")
                 }

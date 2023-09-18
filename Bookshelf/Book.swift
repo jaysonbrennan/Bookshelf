@@ -7,12 +7,8 @@
 
 import Foundation
 
-struct Book: Hashable {
+struct Book: Hashable, Decodable, Identifiable {
+    var id: Int
     let name: String
     let author: String
-    
-    init(name: String, author: String) {
-        self.name = name
-        self.author = author
-    }
 }

@@ -36,6 +36,6 @@ struct BookCard: View {
 
 struct BookCard_Previews: PreviewProvider {
     static var previews: some View {
-        BookCard(book: Book(name: "Jumanji", author: "Robin Williams"))
+        BookCard(book: Book(id: 1, name: "Jumanji", author: "Robin Williams"))
     }
 }
