@@ -19,6 +19,7 @@
 		139EA7C42A993D8500577FAD /* BookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EA7C32A993D8500577FAD /* BookCard.swift */; };
 		139EA7C82A993E6C00577FAD /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EA7C72A993E6C00577FAD /* BookshelfView.swift */; };
 		139EA7CA2A99401A00577FAD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EA7C92A99401A00577FAD /* Book.swift */; };
+		13DABF722AC8C7F90033F54C /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DABF712AC8C7F90033F54C /* Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		139EA7C32A993D8500577FAD /* BookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCard.swift; sourceTree = "<group>"; };
 		139EA7C72A993E6C00577FAD /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
 		139EA7C92A99401A00577FAD /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		13DABF712AC8C7F90033F54C /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				130308D52A991BDA009B3B71 /* MainView.swift */,
+				13DABF712AC8C7F90033F54C /* Library.swift */,
 				139EA7C62A993E0F00577FAD /* Bookshelf */,
 				139EA7C32A993D8500577FAD /* BookCard.swift */,
 			);
@@ -293,6 +296,7 @@
 				136B12FB2AB85747007170FC /* BookService.swift in Sources */,
 				130308D42A991BDA009B3B71 /* BookshelfApp.swift in Sources */,
 				136B12F92AB854F1007170FC /* Bookshelf.swift in Sources */,
+				13DABF722AC8C7F90033F54C /* Library.swift in Sources */,
 				139EA7CA2A99401A00577FAD /* Book.swift in Sources */,
 				139EA7C82A993E6C00577FAD /* BookshelfView.swift in Sources */,
 			);

@@ -32,9 +32,9 @@ struct Bookshelf_Previews: PreviewProvider {
             .environmentObject({ () -> Bookshelf in
                 let bookshelf = Bookshelf()
                 bookshelf.books = [
-                    Book(id: 1, name: "Final Empire", author: "Brandon Sanderson"),
-                    Book(id: 2, name: "Harry Potter", author: "J.K. Rowling"),
-                    Book(id: 3, name: "Green Eggs & Hame", author: "Dr. Seuss")
+                    Book(id: "xyz", volumeInfo: VolumeInfo(title: "Final Empire", authors: ["Brandon Sanderson"])),
+                    Book(id: "abc", volumeInfo: VolumeInfo(title: "Harry Potter", authors: ["J.K. Rowling"])),
+                    Book(id: "mno", volumeInfo: VolumeInfo(title: "Green Eggs & Ham", authors: ["Dr. Seuss"]))
                 ]
                 return bookshelf
             }() )

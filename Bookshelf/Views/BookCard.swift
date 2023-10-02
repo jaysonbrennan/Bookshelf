@@ -18,14 +18,14 @@ struct BookCard: View {
                 .padding(.trailing, 10)
             VStack {
                 HStack {
-                    Text(book.name)
+                    Text(book.volumeInfo.title)
                         .font(.title2)
                     Spacer()
                     Image(systemName: "star.fill")
                     Text("5.0")
                 }
                 HStack {
-                    Text("By " + book.author)
+                    Text("By " + book.volumeInfo.authors[0])
                     Spacer()
                 }
             }
@@ -36,6 +36,6 @@ struct BookCard: View {
 
 struct BookCard_Previews: PreviewProvider {
     static var previews: some View {
-        BookCard(book: Book(id: 1, name: "Jumanji", author: "Robin Williams"))
+        BookCard(book: Book(id: "xyz", volumeInfo: VolumeInfo(title: "Jumanji", authors: ["Robin Williams"])))
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            Text("Library")
+            Library()
                 .tabItem {
                     Label("Library", systemImage: "building.columns.fill")
                 }
@@ -25,5 +25,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(Bookshelf())
     }
 }

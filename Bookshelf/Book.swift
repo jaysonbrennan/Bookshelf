@@ -7,8 +7,17 @@
 
 import Foundation
 
+struct VolumeInfo: Hashable, Decodable {
+    let title: String
+    let authors: [String]
+}
+
 struct Book: Hashable, Decodable, Identifiable {
-    var id: Int
-    let name: String
-    let author: String
+    let id: String
+    let volumeInfo: VolumeInfo
+}
+
+struct BookVolumes: Decodable {
+    let items: [Book]
+    let kind: String
 }
