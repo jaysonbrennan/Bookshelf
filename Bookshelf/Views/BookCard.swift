@@ -12,15 +12,22 @@ struct BookCard: View {
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: book.volumeInfo.imageLinks
-                    .smallThumbnail)) { image in
-                image.resizable()
-            } placeholder: {
+            if let imageLinks = book.volumeInfo.imageLinks {
+                AsyncImage(url: URL(string: book.volumeInfo.imageLinks!
+                        .smallThumbnail)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Image(systemName: "book.closed.fill")
+                        .resizable()
+                }
+                .frame(width: 50, height: 75)
+                .padding(.trailing, 10)
+            } else {
                 Image(systemName: "book.closed.fill")
                     .resizable()
+                    .frame(width: 50, height: 75)
+                    .padding(.trailing, 10)
             }
-            .frame(width: 50, height: 75)
-            .padding(.trailing, 10)
             VStack {
                 HStack {
                     Text(book.volumeInfo.title)
@@ -30,7 +37,11 @@ struct BookCard: View {
                     Text("5.0")
                 }
                 HStack {
-                    Text("By " + book.volumeInfo.authors[0])
+                    if let authors = book.volumeInfo.authors {
+                        Text("By " + authors[0])
+                    } else {
+                        Text("By Unknown")
+                    }
                     Spacer()
                 }
             }

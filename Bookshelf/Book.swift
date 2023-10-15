@@ -7,18 +7,6 @@
 
 import Foundation
 
-struct ImageLinks: Hashable, Decodable {
-    let smallThumbnail: String
-    let thumbnail: String
-}
-
-struct VolumeInfo: Hashable, Decodable {
-    let title: String
-    let authors: [String]
-    let description: String
-    let imageLinks: ImageLinks
-}
-
 struct Book: Hashable, Decodable, Identifiable {
     let id: String
     let volumeInfo: VolumeInfo
@@ -27,4 +15,16 @@ struct Book: Hashable, Decodable, Identifiable {
 struct BookVolumes: Decodable {
     let items: [Book]
     let kind: String
+}
+
+struct VolumeInfo: Hashable, Decodable {
+    let title: String
+    let authors: [String]?
+    let description: String?
+    let imageLinks: ImageLinks?
+}
+
+struct ImageLinks: Hashable, Decodable {
+    let smallThumbnail: String
+    let thumbnail: String
 }
