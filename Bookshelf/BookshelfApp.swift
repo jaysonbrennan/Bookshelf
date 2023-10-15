@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct BookshelfApp: App {
     @StateObject private var bookshelf = Bookshelf()
-    
+
     var body: some Scene {
         WindowGroup {
             MainView()

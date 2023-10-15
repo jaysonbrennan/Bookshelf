@@ -8,8 +8,9 @@
 import Foundation
 
 func fetchBooks() async -> [Book] {
-    let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=harry+potter")
-    
+    let url =
+        URL(string: "https://www.googleapis.com/books/v1/volumes?q=harry+potter")
+
     do {
         let (data, response) = try await URLSession.shared.data(from: url!)
         guard let httpResponse = response as? HTTPURLResponse,
@@ -17,9 +18,10 @@ func fetchBooks() async -> [Book] {
             print("Failed book request")
             return []
         }
-        
+
         do {
-            let bookVolumes = try JSONDecoder().decode(BookVolumes.self, from: data)
+            let bookVolumes = try JSONDecoder()
+                .decode(BookVolumes.self, from: data)
             print("Book ID: \(bookVolumes.items[0].id)")
             return bookVolumes.items
         } catch {

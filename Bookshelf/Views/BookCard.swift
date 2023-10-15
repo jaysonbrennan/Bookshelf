@@ -9,13 +9,18 @@ import SwiftUI
 
 struct BookCard: View {
     let book: Book
-    
+
     var body: some View {
         HStack {
-            Image(systemName: "book.closed.fill")
-                .resizable()
-                .frame(width: 50, height: 75)
-                .padding(.trailing, 10)
+            AsyncImage(url: URL(string: book.volumeInfo.imageLinks
+                    .smallThumbnail)) { image in
+                image.resizable()
+            } placeholder: {
+                Image(systemName: "book.closed.fill")
+                    .resizable()
+            }
+            .frame(width: 50, height: 75)
+            .padding(.trailing, 10)
             VStack {
                 HStack {
                     Text(book.volumeInfo.title)
@@ -36,6 +41,11 @@ struct BookCard: View {
 
 struct BookCard_Previews: PreviewProvider {
     static var previews: some View {
-        BookCard(book: Book(id: "xyz", volumeInfo: VolumeInfo(title: "Jumanji", authors: ["Robin Williams"])))
+        BookCard(book: Book(id: "xyz",
+                            volumeInfo: VolumeInfo(title: "Jumanji",
+                                                   authors: ["Robin Williams"],
+                                                   description: "Book Description",
+                                                   imageLinks: ImageLinks(smallThumbnail: "url",
+                                                                          thumbnail: "url"))))
     }
 }

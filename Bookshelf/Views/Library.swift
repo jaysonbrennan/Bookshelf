@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Library: View {
     @State private var books: [Book] = []
-    
+
     var body: some View {
         NavigationStack {
             List {
