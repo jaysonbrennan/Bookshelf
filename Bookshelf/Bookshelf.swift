@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class Bookshelf: ObservableObject {
-    @Published var books: [Book] = []
+@Observable final class Bookshelf {
+    var books: [Book] = []
 }

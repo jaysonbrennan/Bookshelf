@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookshelfView: View {
-    @EnvironmentObject private var bookshelf: Bookshelf
+    @Environment(Bookshelf.self) private var bookshelf: Bookshelf
 
     var body: some View {
         NavigationStack {
@@ -29,7 +29,7 @@ struct BookshelfView: View {
 struct Bookshelf_Previews: PreviewProvider {
     static var previews: some View {
         BookshelfView()
-            .environmentObject({ () -> Bookshelf in
+            .environment({ () -> Bookshelf in
                 let bookshelf = Bookshelf()
                 bookshelf.books = [
                     Book(id: "xyz",
