@@ -9,19 +9,27 @@ import SwiftUI
 
 struct Library: View {
     @State private var books: [Book] = []
+    @State private var inProgress: Bool = true
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(books) { book in
-                    BookCard(book: book)
+        ZStack {
+            NavigationStack {
+                List {
+                    ForEach(books) { book in
+                        BookCard(book: book)
+                    }
                 }
+                .navigationTitle("Library")
+                .listStyle(.plain)
             }
-            .navigationTitle("Library")
-            .listStyle(.plain)
+            if inProgress {
+                ProgressView()
+                    .scaleEffect(1.5)
+            }
         }
         .task {
             books = await fetchBooks()
+            inProgress = false
         }
     }
 }

@@ -13,7 +13,7 @@ struct BookCard: View {
     var body: some View {
         HStack {
             if let imageLinks = book.volumeInfo.imageLinks {
-                AsyncImage(url: URL(string: book.volumeInfo.imageLinks!
+                AsyncImage(url: URL(string: imageLinks
                         .smallThumbnail)) { image in
                     image.resizable()
                 } placeholder: {
